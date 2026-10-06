@@ -1,0 +1,86 @@
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial,Helvetica,sans-serif;background:#f4f7fb;color:#172033}
+.navbar{height:70px;background:#172554;color:white;display:flex;align-items:center;justify-content:space-between;padding:0 7%;box-shadow:0 2px 10px #0002}
+.brand{font-size:25px;font-weight:800;letter-spacing:.3px}
+.nav-right{display:flex;align-items:center;gap:18px}
+.container{width:min(1100px,92%);margin:35px auto}
+.narrow{max-width:850px}
+.hero{background:linear-gradient(135deg,#1d4ed8,#4338ca);color:white;padding:35px;border-radius:18px;margin-bottom:35px}
+.hero h1{margin:0 0 8px;font-size:34px}
+.hero p{margin:0;opacity:.9}
+h2{margin-top:30px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px}
+.card{background:white;border-radius:16px;padding:24px;box-shadow:0 5px 20px #17255412;border:1px solid #e7ebf3}
+.quiz-card h3{font-size:22px;margin:14px 0 8px}
+.quiz-card p{line-height:1.5}
+.badge{display:inline-block;background:#e0e7ff;color:#3730a3;padding:6px 11px;border-radius:20px;font-size:13px;font-weight:700}
+.btn{display:inline-block;border:0;background:#e9eef8;color:#172033;padding:11px 17px;border-radius:9px;text-decoration:none;font-weight:700;cursor:pointer}
+.btn.primary{background:#2563eb;color:white}
+.btn.small{padding:8px 13px;font-size:14px}
+.btn.full{width:100%;text-align:center}
+.btn.disabled{opacity:.5;cursor:not-allowed}
+.muted{color:#667085}
+.section-title{margin-top:40px}
+.table-wrap{overflow-x:auto}
+table{width:100%;border-collapse:collapse}
+th,td{text-align:left;padding:13px;border-bottom:1px solid #e7ebf3}
+th{background:#f8fafc}
+.quiz-header{margin-bottom:20px}
+.question-card{margin-bottom:18px}
+.question-card h3{line-height:1.5}
+.option{display:flex;gap:12px;align-items:flex-start;border:1px solid #dce2ec;border-radius:10px;padding:13px;margin:10px 0;cursor:pointer}
+.option:hover{background:#f8fafc}
+.option input{margin-top:3px}
+.submit-btn{margin:8px 0 40px}
+.auth-page,.result-page{min-height:100vh;display:flex;justify-content:center;align-items:center;padding:25px}
+.auth-card,.result-card{background:white;width:min(430px,100%);padding:35px;border-radius:18px;box-shadow:0 10px 35px #17255418}
+.auth-card h1{margin-bottom:5px}
+label{display:block;font-weight:700;margin-top:18px;margin-bottom:7px}
+input[type=text],input[type=email],input[type=password]{width:100%;padding:13px;border:1px solid #ccd4e0;border-radius:9px;font-size:16px}
+.auth-card form .btn{margin-top:22px}
+.center{text-align:center}
+.alert{padding:12px;border-radius:9px;margin:15px 0}
+.alert.error{background:#fee2e2;color:#991b1b}
+.alert.success{background:#dcfce7;color:#166534}
+.result-card{text-align:center}
+.result-card .brand{color:#1d4ed8;margin-bottom:25px}
+.score{font-size:72px;font-weight:800;color:#2563eb;margin-top:25px}
+.score small{font-size:30px;color:#64748b}
+.result-actions{display:flex;justify-content:center;gap:12px;margin-top:25px;flex-wrap:wrap}
+a{color:#1d4ed8}
+@media(max-width:600px){.navbar{padding:0 4%}.nav-right span{display:none}.container{margin:22px auto}.hero h1{font-size:28px}}
+
+/* Quiz timer */
+.quiz-timer {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 14px;
+  padding: 9px 15px;
+  border-radius: 999px;
+  background: #eef2ff;
+  color: #3730a3;
+  border: 1px solid #c7d2fe;
+  font-weight: 800;
+  letter-spacing: .3px;
+}
+.quiz-timer.danger {
+  background: #fef2f2;
+  color: #b91c1c;
+  border-color: #fecaca;
+}
+
+
+/* CSS-only quit confirmation */
+.quiz-actions { display:flex; gap:10px; flex-wrap:wrap; margin-top:12px; align-items:flex-start; }
+.quit-details { position:relative; }
+.quit-details > summary { list-style:none; }
+.quit-details > summary::-webkit-details-marker { display:none; }
+.quit-details[open] > summary { opacity:.75; }
+.quit-details .quit-box { position:fixed; left:50%; top:50%; transform:translate(-50%,-50%); z-index:9999; width:min(520px,calc(100% - 40px)); box-sizing:border-box; background:#fff; color:#222; border-radius:14px; padding:24px; box-shadow:0 20px 60px rgba(0,0,0,.35); border:1px solid #e7ebf3; }
+.quit-details[open]::after { content:""; position:fixed; inset:0; z-index:9998; background:rgba(0,0,0,.68); }
+.quit-details[open] .quit-box { z-index:10000; }
+.quit-box h2 { margin:0 0 14px; }
+.quit-box p { line-height:1.6; margin:8px 0; }
+.quit-actions { display:flex; gap:10px; justify-content:flex-end; flex-wrap:wrap; margin-top:20px; }
+.quit-actions .btn { cursor:pointer; }
